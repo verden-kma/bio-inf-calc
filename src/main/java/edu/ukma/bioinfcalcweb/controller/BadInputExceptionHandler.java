@@ -13,6 +13,7 @@ public class BadInputExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<Object> handleWrongInputData(Exception unforeseen, WebRequest request) {
+        unforeseen.printStackTrace();
         return handleExceptionInternal(unforeseen, "Bad input data", new HttpHeaders(), HttpStatus.BAD_REQUEST, request);
     }
 }
